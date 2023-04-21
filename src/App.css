@@ -1,0 +1,398 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #08152a;
+
+}
+
+@font-face {
+    font-family: 'fuente titulos';
+    src: url("./fuentes/Lobster/Lobster-Regular.ttf");
+}
+
+@font-face {
+    font-family: fuente parrafos;
+    src: url("/src/fuentes/Sriracha-Regular.ttf");
+}
+
+.contenedor-acerca_de_mi{
+    height: 100vh;
+    padding-top: 1px;
+}
+
+.acerca-de-mi {
+    margin-left: 1.5rem;
+}
+
+.foto-acerca_de_mi img {
+    border-radius: 50%;
+    width: 25vw;
+    height: 25vw;
+    object-fit: cover;
+    float: left;
+    margin-top: 6px;
+    margin-right: 2rem;
+    shape-outside: circle();
+}
+
+.titulo-descripcion, .parrafo{
+    color:aliceblue ;
+    font-family: fuente parrafos;
+    margin-top: 5px;
+}
+
+.certificados {
+    opacity: 0;
+}
+
+.titulo{
+    font-family: fuente titulos;
+    color: #85f5f6;
+    font-size:4vh;
+    margin-top: 2rem;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.icon:hover {
+    transform: translateY(-5px);
+}
+
+.certificado a span:hover {
+    background-color: rgba(0, 0, 0, 0.233);
+}
+
+.certificado:hover{
+    animation: sacudida 1s;
+}
+
+.certificado:hover .medalla{
+    animation: caida 2.5s;
+}
+
+@keyframes caida {
+    from{
+        margin-top: 0;
+        transform: translateX(8rem);
+        transform: rotate(-10deg);
+    }
+    to{
+        margin-top: 50rem;
+        transform: translateX(8rem);
+        opacity:0;
+    }
+}
+
+@keyframes sacudida {
+    30%{
+        transform: rotate(5deg);
+        
+    }
+    60%{
+        transform: rotate(-5deg);
+        
+    }
+    90%{
+        transform: rotate(2deg);
+        
+    }
+    
+}
+
+.habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap:15px;
+}
+
+.habilidad{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    opacity: 0;
+}
+
+.habilidad:hover img {
+    transform: perspective(10rem) translateZ(3rem);
+    transition: transform 1s;
+}
+
+.habilidad p {
+    color: aliceblue;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.habilidad img {
+    height: 150px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.mostrarIzquierda{
+    animation: mostrarIzquierda 1s;
+}
+
+.mostrarArriba{
+    animation: mostrarArriba 1s;
+}
+
+.mostrarAlFrente{
+    animation: mostrarAlFrente 2s;
+}
+.mostrarDerecha{
+    animation: mostrarDerecha 2s;
+}
+
+@keyframes mostrarDerecha {
+    0% { 
+        transform: translateX(300px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes mostrarIzquierda {
+    0% { 
+        transform: translateX(-200px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+@keyframes mostrarArriba {
+    0% { 
+        transform: translateY(-200px)
+    }
+
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes mostrarAlFrente {
+    0% { 
+        transform: perspective(10rem) translateZ(-105rem);
+    }
+    
+    100% {
+        transform: perspective(10rem) translateZ(0rem);
+    }
+}
+
+@media (min-width: 280px) {
+    .certificados{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        justify-content: end;
+        justify-items: center;
+        row-gap: 7rem;
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+    .certificados h2 {
+        text-align: center;
+    }
+
+    .certificado {
+        position: relative;
+        border: 3vw outset gold;
+        width: 40vw;
+        height: 30vw;
+        
+    }
+    
+    .certificado img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .certificado a {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .certificado a span {
+        width: 100%;
+        height: 100%;
+        padding-top: 30%;
+        font-size: 5vw;
+    }
+
+    .contenedor-medalla{
+        width: 9vw;
+        height: 9vw;
+    }
+
+    .icons a {
+        font-size: 10vw;
+    }
+
+    .medalla {
+        position: static;
+        object-fit: contain;
+        margin-left: 31vw;
+        transform: rotate(-10deg);
+        z-index: 10;
+    }
+
+}
+
+@media (max-width: 412px) {
+    .acerca-de-mi {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .foto-acerca_de_mi {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 992px ){ 
+
+    .contenedor {
+        height: 100vh;
+     }
+
+    .contenedor-presentacion{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .titulo-descripcion {
+        font-size: 3vh;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .titulo {
+        text-align: center;
+    }
+
+    .parrafo  { 
+        font-size:2vh;
+        padding: 5px 20px;
+    }
+
+    .contenedor-titulos{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .contenedor-foto {
+        width: 70%;
+        height: 50%;
+    }
+    
+    .foto {
+        border: solid #85f5f6;
+        width: 100%;
+        height: 70%;
+        margin: 10% auto;
+    }
+
+}
+
+@media (min-width: 992px) { 
+    .contenedor {
+        width: 100%;
+        height: 100vh;
+     }
+     
+     .contenedor-presentacion {
+         height: 100%;
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 0 15px;
+         gap: 15px;
+     }
+     
+     .titulo {
+         font-size:6vh;
+         margin-top: 5rem;
+         padding-left: 3rem;
+     }
+
+     .titulo-descripcion {
+        font-size: 4vh;
+        font-weight: bold;
+    }
+
+    .parrafo  { 
+       font-size:3vh;
+       
+    }
+
+    .contenedor-titulos{
+        width: 50vw;
+        padding: 5px 20px;
+    }
+     
+    .contenedor-foto {
+        width: 50%;
+        height: 100%;
+    }
+
+    .foto {
+        border: solid #85f5f6;
+        width: 70%;
+        height: 60%;
+        margin: 30% auto;
+    }
+
+    .icons a {
+        font-size: 5vw;
+    }
+
+}
+
+@media (min-width: 1263px) {
+    .contenedor-habilidades {
+        height: 100vh;
+    }
+}
+
+
+
+ 
+ 
+
+
+    
+
+
+
+
+
+
