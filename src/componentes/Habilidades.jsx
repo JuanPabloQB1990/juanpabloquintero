@@ -4,7 +4,7 @@ const Habilidades = ({habilidad}) => {
   return (
     <div className="efectoMostrarArriba habilidad">
       <img src={habilidad.url} alt={habilidad.nombre} />
-      <p>{habilidad.nombre}</p>
+      <p className="efectoMostrarArriba parrafo">{habilidad.nombre}</p>
       <div>
         <BarraHabilidades width={habilidad.habilidad} />
       </div>

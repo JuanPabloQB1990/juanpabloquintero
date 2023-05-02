@@ -115,14 +115,14 @@
     },
     {
       "id": 3,
-      "nombre": "html",
-      "urlImagen": "./public/Certificados/curso html.jpg",
+      "nombre": "javascript",
+      "urlImagen": "./public/Certificados/curso javascript.jpg",
       "urlDescarga": "./public/Certificados//Certificado JavaScript.pdf"
     },
     {
       "id": 4,
-      "nombre": "html",
-      "urlImagen": "./public/Certificados/curso html.jpg",
+      "nombre": "react",
+      "urlImagen": "./public/Certificados/curso react.png",
       "urlDescarga": "./public/Certificados//Certificado React.pdf"
     }
   ]
