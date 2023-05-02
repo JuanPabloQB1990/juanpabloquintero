@@ -89,7 +89,6 @@ function App() {
     <main className="contenedor">
       <section className="contenedor-presentacion">
         <div className="contenedor-titulos">
-          <div>
           <h1 className="efectoIzquierda titulo">
             Juan Pablo Quintero Bustamante
           </h1>
@@ -106,7 +105,6 @@ function App() {
                 return <Icons icono={icono} key={icono.id} />;
               })}
             </div>
-          </div>
         </div>
         <div className="contenedor-foto">
           <div className="mostrarDerecha foto">
