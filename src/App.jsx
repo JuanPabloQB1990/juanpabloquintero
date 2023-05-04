@@ -5,7 +5,6 @@ import foto from "./img/Foto.jpg";
 import Icons from "./componentes/Icons.jsx";
 import Habilidades from "./componentes/Habilidades";
 import Certificados from "./componentes/Certificados";
-import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { BiHome } from "react-icons/bi";
 import { RiToolsFill } from "react-icons/ri";
