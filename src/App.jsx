@@ -192,7 +192,7 @@ function App() {
           presente.
         </p>
         <div className="contenedor-boton_cv">
-          <a rel="noreferrer" href="/Hoja de Vida 2023.pdf" download="Juan Pablo Quintero 2023">
+          <a rel="noreferrer" href="/hoja de vida 2023.pdf" download="Juan Pablo Quintero 2023">
             <button className="boton-cv" type="submit">
               Descarga mi CV
             </button>
