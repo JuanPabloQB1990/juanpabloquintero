@@ -5,8 +5,13 @@ import foto from "./img/Foto.jpg";
 import Icons from "./componentes/Icons.jsx";
 import Habilidades from "./componentes/Habilidades";
 import Certificados from "./componentes/Certificados";
-import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { BiHome } from "react-icons/bi";
+import { RiToolsFill } from "react-icons/ri";
+import { GrCertificate } from "react-icons/gr";
+import { SiAboutdotme } from "react-icons/si";
+import { IoIosContacts } from "react-icons/io";
 
 function App() {
   const [iconos, setIconos] = useState([]);
@@ -87,24 +92,53 @@ function App() {
 
   return (
     <main className="contenedor">
-      <section className="contenedor-presentacion">
+      <div className="header">
+        <nav className="nav">
+          <a href="#presentacion">
+            <span>
+              <BiHome size="2em" />
+            </span>
+          </a>
+          <a href="#habilidades">
+            <span>
+              <RiToolsFill size="2em" />
+            </span>
+          </a>
+          <a href="#certificados">
+            <span>
+              <GrCertificate fill="currentColor" size="2em" />
+            </span>
+          </a>
+          <a href="#about">
+            <span>
+              <SiAboutdotme size="2em" />
+            </span>
+          </a>
+          <a href="#contactame">
+            <span>
+              <IoIosContacts size="2em" />
+            </span>
+          </a>
+        </nav>
+      </div>
+      <section id="presentacion" className="contenedor-presentacion">
         <div className="contenedor-titulos">
           <h1 className="efectoIzquierda titulo">
             Juan Pablo Quintero Bustamante
           </h1>
-            <h2 className="sub-titulo">
-              Soy <span ref={el}></span>
-            </h2>
-            <p className="traerFrente parrafo">
-              Apasionado por la programación y el desarrollo Web tanto del lado
-              del frontend como del backend, me gusta aprender tecnologias y
-              herramientas nuevas cada dia.
-            </p>
-            <div className="icons">
-              {iconos.map((icono) => {
-                return <Icons icono={icono} key={icono.id} />;
-              })}
-            </div>
+          <h2 className="sub-titulo">
+            Soy <span ref={el}></span>
+          </h2>
+          <p className="traerFrente parrafo">
+            Apasionado por la programación y el desarrollo Web tanto del lado
+            del frontend como del backend, me gusta aprender tecnologias y
+            herramientas nuevas cada dia.
+          </p>
+          <div className="icons">
+            {iconos.map((icono) => {
+              return <Icons icono={icono} key={icono.id} />;
+            })}
+          </div>
         </div>
         <div className="contenedor-foto">
           <div className="mostrarDerecha foto">
@@ -112,7 +146,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className="contenedor-habilidades">
+      <section id="habilidades" className="contenedor-habilidades">
         <h2 className="titulo">Habilidades</h2>
         <p className="parrafo efectoMostrarArriba">
           Estas son mis habilidades con su porcentaje repectivo de conocimiento
@@ -125,7 +159,7 @@ function App() {
           })}
         </div>
       </section>
-      <section className="contenedor-certificados">
+      <section id="certificados" className="contenedor-certificados">
         <h2 className="titulo">Certificados de Cursos</h2>
         <p className="parrafo efectoMostrarArriba">
           estos son algunos cursos que he realizado en plataformas como UdeMy,
@@ -142,7 +176,7 @@ function App() {
           </ul>
         </article>
       </section>
-      <section className="contenedor-acerca_de_mi">
+      <section id="about" className="contenedor-acerca_de_mi">
         <h2 className="titulo">Acerca de Mi</h2>
         <figure className="foto-acerca_de_mi">
           <img src={foto} alt="" />
@@ -158,14 +192,14 @@ function App() {
           presente.
         </p>
         <div className="contenedor-boton_cv">
-          <a rel="noreferrer" href="" download="Hoja de Vida 2022">
+          <a rel="noreferrer" href="/Hoja de Vida 2023.pdf" download="Juan Pablo Quintero 2023">
             <button className="boton-cv" type="submit">
               Descarga mi CV
             </button>
           </a>
         </div>
       </section>
-      <section className="contenedor-contactame">
+      <section id="contactame" className="contenedor-contactame">
         <div className="contenedor-info">
           <h2 className="titulo">Contactame</h2>
           <h2 className="sub-titulo">Enviame un correo</h2>

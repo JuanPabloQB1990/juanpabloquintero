@@ -6,8 +6,9 @@
   --color-titulos: #85f5f6;
   --color-subTitulos: aliceblue;
   --color-parrafos: aliceblue;
-  --color1-border-foto: #f2317f;
-  --color2-border-foto: #00ff95;
+  --color1-border-foto: #00ff95;
+  --color2-border-foto: rgba(45, 241, 227, 1);
+  --color3-border-foto: #f2317f;
 }
 
 * {
@@ -45,7 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
   padding: 0 15px;
 }
 
@@ -81,18 +82,29 @@ body {
 
 .icons a {
   font-size: clamp(2rem, calc(2rem + 1vw), 3rem);
+  color: #00ff95;
 }
 
 .icon:hover {
   transform: translateY(-10px);
 }
 
+.icon a:hover {
+  color: #f2317f;
+}
+
 .foto {
   background: linear-gradient(#111, #111) padding-box,
-    linear-gradient(45deg, var(--color1-border-foto), var(--color2-border-foto)) border-box;
+    linear-gradient(
+        45deg,
+        var(--color1-border-foto),
+        var(--color2-border-foto),
+        var(--color3-border-foto)
+      )
+      border-box;
   border: 10px solid transparent;
-  width: max(280px, 25vw);
-  height: max(280px, 25vw);
+  width: max(160px, 25vw);
+  height: max(160px, 25vw);
 }
 
 .foto img {
@@ -220,7 +232,7 @@ body {
   background: rgb(72, 240, 237);
   background: linear-gradient(
     90deg,
-    rgba(72, 240, 237, 1) 0%,
+    #00ff95 0%,
     rgba(45, 241, 227, 1) 38%,
     #f2317f 79%
   );
@@ -241,13 +253,6 @@ body {
 .boton-cv:hover {
   background-position: 100% 0;
 }
-
-/* .contenedor-contactame {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
 
 .contenedor-formulario label {
   color: var(--color-parrafos);
@@ -283,12 +288,12 @@ textarea {
   width: 100%;
   padding: 10px;
   border-radius: 0.25rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
   background: rgb(72, 240, 237);
   background: linear-gradient(
     90deg,
-    rgba(72, 240, 237, 1) 0%,
+    #00ff95 0%,
     rgba(45, 241, 227, 1) 38%,
     #f2317f 79%
   );
@@ -303,6 +308,39 @@ textarea {
 .formulario-contacto input:focus,
 textarea:focus {
   box-shadow: 0px 0px 10px #85f5f6;
+}
+
+.header {
+  background-color: transparent;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  bottom: 15px;
+}
+
+.nav {
+  width: 275px;
+  height: 100%;
+  background-color: #11111167;
+  margin: 0 auto;
+  border-radius: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav a {
+  color: #00ff95;
+}
+
+.nav a:hover {
+  color: #f2317f;
+}
+
+.nav a span {
+  display: block;
+  text-align: center;
+  text-decoration: none;
 }
 
 .mostrarIzquierda {
@@ -361,16 +399,16 @@ textarea:focus {
 }
 
 @media (min-width: 992px) {
-  .contenedor-presentacion, 
+  .contenedor-presentacion,
   .contenedor-contactame {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+  }
 
-.contenedor-titulos,
-.contenedor-info,
-.contenedor-formulario  {
+  .contenedor-titulos,
+  .contenedor-info,
+  .contenedor-formulario {
     width: 50vw;
     height: 50vh;
     padding: 0 15px;
@@ -384,12 +422,10 @@ textarea:focus {
     margin: 0 auto;
   }
 
-  .titulo, 
+  .titulo,
   .sub-titulo,
   .icons {
     text-align: left;
     padding-left: 1.5rem;
   }
-
-  
 }
