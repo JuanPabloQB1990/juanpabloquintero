@@ -1,4 +1,4 @@
-import medalla from "../img/medalla.png";
+import medalla from "/img/medalla.png";
 const Certificados = ({ certificado }) => {
   return (
     <li className="certificado">

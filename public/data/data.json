@@ -30,73 +30,73 @@
     {
       "id": 1,
       "nombre": "html",
-      "url": "../src/img/logos/html.png",
+      "url": "logos/html.png",
       "habilidad": 90
     },
     {
       "id": 2,
       "nombre": "css",
-      "url": "../src/img/logos/css.png",
+      "url": "logos/css.png",
       "habilidad": 85
     },
     {
       "id": 3,
       "nombre": "javascript",
-      "url": "../src/img/logos/javascript.png",
+      "url": "logos/javascript.png",
       "habilidad": 90
     },
     {
       "id": 4,
       "nombre": "react",
-      "url": "../src/img/logos/react.png",
+      "url": "logos/react.png",
       "habilidad": 95
     },
     {
       "id": 5,
       "nombre": "node",
-      "url": "../src/img/logos/node.png",
+      "url": "logos/node.png",
       "habilidad": 95
     },
     {
       "id": 6,
       "nombre": "php",
-      "url": "../src/img/logos/php.png",
+      "url": "logos/php.png",
       "habilidad": 75
     },
     {
       "id": 7,
       "nombre": "mysql",
-      "url": "../src/img/logos/mysql.png",
+      "url": "logos/mysql.png",
       "habilidad": 60
     },
     {
       "id": 8,
       "nombre": "bootstrap",
-      "url": "../src/img/logos/bootstrap.png",
+      "url": "logos/bootstrap.png",
       "habilidad": 70
     },
     {
       "id": 9,
       "nombre": "sass",
-      "url": "../src/img/logos/sass.png",
+      "url": "logos/sass.png",
       "habilidad": 60
     },
     {
       "id": 10,
       "nombre": "styledComponents",
-      "url": "../src/img/logos/styled-components.png",
+      "url": "logos/styled-components.png",
       "habilidad": 70
     },
     {
       "id": 11,
       "nombre": "tailwind",
-      "url": "../src/img/logos/tailwind.png",
+      "url": "logos/tailwind.png",
       "habilidad": 70
     },
     {
       "id": 12,
       "nombre": "java",
-      "url": "../src/img/logos/java.png",
+      "url": "logos/java.png",
       "habilidad": 65
     }
   ],
@@ -104,25 +104,25 @@
     {
       "id": 1,
       "nombre": "html",
-      "urlImagen": "../src/img/Certificados/curso html.jpg",
+      "urlImagen": "Certificados/curso html.jpg",
       "urlDescarga": "./public/Certificados//Certificado HTML.pdf"
     },
     {
       "id": 2,
       "nombre": "css",
-      "urlImagen": "../src/img/Certificados/curso css.jpg",
+      "urlImagen": "Certificados/curso css.jpg",
       "urlDescarga": "./public/Certificados//Certificado CSS.pdf"
     },
     {
       "id": 3,
       "nombre": "javascript",
-      "urlImagen": "../src/img/Certificados/curso javascript.jpg",
+      "urlImagen": "Certificados/curso javascript.jpg",
       "urlDescarga": "./public/Certificados//Certificado JavaScript.pdf"
     },
     {
       "id": 4,
       "nombre": "react",
-      "urlImagen": "../src/img/Certificados/curso react.png",
+      "urlImagen": "Certificados/curso react.png",
       "urlDescarga": "./public/Certificados//Certificado React.pdf"
     }
   ]

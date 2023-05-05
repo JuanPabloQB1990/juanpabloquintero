@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
-import foto from "./img/Foto.jpg";
+import foto from "/img/Foto.jpg";
 import Icons from "./componentes/Icons.jsx";
 import Habilidades from "./componentes/Habilidades";
 import Certificados from "./componentes/Certificados";
