@@ -184,14 +184,14 @@ function App() {
           Nací en la ciudad de Medellín departamento de Antioquia Colombia, con
           un gran deseo y anhelo de iniciarme en esta gran artistica y
           maravillosa carrera. Disfruto mucho construyendo interfaces para
-          usuarios que sean adaptables y escaables para los dispositivos,
+          usuarios que sean adaptables y escalables para los dispositivos,
           tambien me gusta generar soluciones a los problemas que se puedan
           presentar. Tambien me gusta trabajar en grupo y analizar y debatir los
           retos y mejores soluciones a cualquier problema o eventualidad que se
           presente.
         </p>
         <div className="contenedor-boton_cv">
-          <a rel="noreferrer" href="/hoja de vida 2023.pdf" download="Juan Pablo Quintero 2023">
+          <a rel="noreferrer" href="/Hoja de Vida Juan Pablo Quintero.pdf" download="CV Juan Pablo Quintero 2023">
             <button className="boton-cv" type="submit">
               Descarga mi CV
             </button>
