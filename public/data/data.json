@@ -53,77 +53,107 @@
     },
     {
       "id": 5,
-      "nombre": "node",
-      "url": "logos/node.png",
-      "habilidad": 95
-    },
-    {
-      "id": 6,
-      "nombre": "php",
-      "url": "logos/php.png",
-      "habilidad": 75
-    },
-    {
-      "id": 7,
-      "nombre": "mysql",
-      "url": "logos/mysql.png",
-      "habilidad": 60
-    },
-    {
-      "id": 8,
       "nombre": "bootstrap",
       "url": "logos/bootstrap.png",
       "habilidad": 70
     },
     {
-      "id": 9,
+      "id": 6,
       "nombre": "sass",
-      "url": "logos/sass.png",
+      "url": "logos/Sass.png",
       "habilidad": 60
     },
     {
-      "id": 10,
+      "id": 7,
       "nombre": "styledComponents",
       "url": "logos/styled-components.png",
       "habilidad": 70
     },
     {
-      "id": 11,
+      "id": 8,
       "nombre": "tailwind",
       "url": "logos/tailwind.png",
-      "habilidad": 70
+      "habilidad": 90
+    },
+    {
+      "id": 9,
+      "nombre": "git",
+      "url": "logos/git.png",
+      "habilidad": 80
+    },
+    {
+      "id": 10,
+      "nombre": "github",
+      "url": "logos/github.png",
+      "habilidad": 80
+    },
+    {
+      "id":11,
+      "nombre": "node",
+      "url": "logos/node.png",
+      "habilidad": 95
     },
     {
       "id": 12,
+      "nombre": "mysql",
+      "url": "logos/MySQL.png",
+      "habilidad": 60
+    },
+    {
+      "id": 13,
       "nombre": "java",
       "url": "logos/java.png",
-      "habilidad": 65
+      "habilidad": 85
+    },
+    {
+      "id": 14,
+      "nombre": "springboot",
+      "url": "logos/springboot.png",
+      "habilidad": 70
+    },
+    {
+      "id": 15,
+      "nombre": "mongodb",
+      "url": "logos/mongodb.png",
+      "habilidad": 70
+    },
+    {
+      "id": 15,
+      "nombre": "firebase",
+      "url": "logos/firebase.png",
+      "habilidad": 83
     }
   ],
   "certificados": [
     {
       "id": 1,
       "nombre": "html",
-      "urlImagen": "Certificados/curso html.jpg",
+      "urlImagen": "Certificados/curso html.JPG",
       "urlDescarga": "./public/Certificados//Certificado HTML.pdf"
     },
     {
       "id": 2,
       "nombre": "css",
-      "urlImagen": "Certificados/curso css.jpg",
+      "urlImagen": "Certificados/curso css.JPG",
       "urlDescarga": "./public/Certificados//Certificado CSS.pdf"
     },
     {
       "id": 3,
       "nombre": "javascript",
-      "urlImagen": "Certificados/curso javascript.jpg",
+      "urlImagen": "Certificados/curso javascript.JPG",
       "urlDescarga": "./public/Certificados//Certificado JavaScript.pdf"
     },
     {
       "id": 4,
       "nombre": "react",
-      "urlImagen": "Certificados/curso react.png",
+      "urlImagen": "Certificados/curso react.PNG",
       "urlDescarga": "./public/Certificados//Certificado React.pdf"
+    },
+    {
+      "id": 5,
+      "nombre": "backend",
+      "urlImagen": "Certificados/bootcamp makaia.png",
+      "urlDescarga": "./public/Certificados//bootcamp makaia.PNG"
     }
   ]
 }

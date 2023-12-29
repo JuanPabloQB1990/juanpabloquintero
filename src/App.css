@@ -2,7 +2,7 @@
   --bg-body: #08152a;
   --font-size-titulos: clamp(1.7rem, calc(1.25rem + 2.25vw), 3.95rem);
   --font-size-subTitulos: clamp(1.35rem, calc(1.17rem + 0.88vw), 2.22rem);
-  --font-size-parrafos: clamp(1.2rem, calc(1.1rem + 0.47vw), 1.67rem);
+  --font-size-parrafos: clamp(1rem, calc(1rem + 0.47vw), 1rem);
   --color-titulos: #85f5f6;
   --color-subTitulos: aliceblue;
   --color-parrafos: aliceblue;
@@ -47,7 +47,6 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 0 15px;
 }
 
 .titulo {
@@ -76,12 +75,11 @@ body {
 .icons {
   display: flex;
   justify-content: space-evenly;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 1rem;
 }
 
 .icons a {
-  font-size: clamp(2rem, calc(2rem + 1vw), 3rem);
+  font-size: clamp(1rem, calc(2rem + 1vw), 2rem);
   color: #00ff95;
 }
 
@@ -117,15 +115,15 @@ body {
   display: flex;
   overflow-x: scroll;
   max-width: 85vw;
-  height: 43vh;
+  height: 50vh;
   margin-left: auto;
   margin-right: auto;
   gap: 32px;
 }
 
 .habilidad {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   text-align: center;
   opacity: 0;
 }
@@ -139,28 +137,6 @@ body {
 .habilidad:hover img {
   transform: perspective(10rem) translateZ(3rem);
   transition: transform 1s;
-}
-
-.certificados {
-  display: flex;
-  overflow-x: scroll;
-  list-style: none;
-  width: clamp(280px, 80vw, 1000px);
-  height: 39vw;
-  padding: 0;
-  margin-top: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  gap: 15px;
-  opacity: 0;
-}
-
-.certificado > img {
-  box-sizing: content-box;
-  border: 3vw outset gold;
-  width: clamp(160px, 40vw, 1000px);
-  height: 25vw;
-  cursor: pointer;
 }
 
 .contenedor-medalla {
@@ -182,6 +158,36 @@ body {
 .certificado:hover .medalla {
   animation: caida 2.5s;
 }
+
+@media (max-width: 992px) {
+
+  .contenedor-certificados{
+    height: auto;
+    padding-bottom: 2rem;
+  }
+
+  .certificados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .certificado > img {
+    box-sizing: content-box;
+    border: 3vw outset gold;
+    width: clamp(160px, 45vw, 1000px);
+    height: 35vw;
+    cursor: pointer;
+  }
+
+  .contenedor-acerca_de_mi {
+    padding-top: 2rem;
+  }
+}
+
+
 
 @keyframes caida {
   from {
@@ -411,7 +417,6 @@ textarea:focus {
   .contenedor-formulario {
     width: 50vw;
     height: 50vh;
-    padding: 0 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -428,4 +433,26 @@ textarea:focus {
     text-align: left;
     padding-left: 1.5rem;
   }
+
+  .certificados {
+    display: flex;
+    overflow-x: scroll;
+    list-style: none;
+    width: clamp(280px, 70vw, 1000px);
+    height: 35vw;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 15px;
+    opacity: 0;
+  }
+  
+  .certificado > img {
+    box-sizing: content-box;
+    border: 3vw outset gold;
+    width: clamp(160px, 30vw, 1000px);
+    height: 20vw;
+    cursor: pointer;
+  }
+  
+  
 }

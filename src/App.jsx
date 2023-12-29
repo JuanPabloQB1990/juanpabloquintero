@@ -130,8 +130,7 @@ function App() {
           </h2>
           <p className="traerFrente parrafo">
             Apasionado por la programación y el desarrollo Web tanto del lado
-            del frontend como del backend, me gusta aprender tecnologias y
-            herramientas nuevas cada dia.
+            del frontend como del backend.
           </p>
           <div className="icons">
             {iconos.map((icono) => {
@@ -160,11 +159,6 @@ function App() {
       </section>
       <section id="certificados" className="contenedor-certificados">
         <h2 className="titulo">Certificados de Cursos</h2>
-        <p className="parrafo efectoMostrarArriba">
-          estos son algunos cursos que he realizado en plataformas como UdeMy,
-          de YouTubers tambien he aprendido mucho, y estos son alguno de los
-          certificados.
-        </p>
         <article>
           <ul className="efectoMostrarArriba certificados">
             {certificados.map((certificado) => {
@@ -203,15 +197,11 @@ function App() {
           <h2 className="titulo">Contactame</h2>
           <h2 className="sub-titulo">Enviame un correo</h2>
           <p className="efectoMostrarArriba parrafo">
-            Puedes contactarme también enviándome un correo, enviándome un
-            mensaje si quieres emplearme u obtener mis servicios.
+            Puedes contactarme enviándome un correo si quieres emplearme u obtener mis servicios.
           </p>
           <h2 className="sub-titulo">
             <b>Teléfono:</b>
             <small> (+57) 324 312 80 49</small>
-          </h2>
-          <h2 className="sub-titulo">
-            <b>Correo:</b> <small>juanpabloqb1990@gmail.com</small>
           </h2>
           <div className="icons">
             {iconos.map((icono) => {
