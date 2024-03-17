@@ -32,7 +32,7 @@ function App() {
   React.useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "desarrollador web Junior",
+        "desarrollador web",
         "estudiante autodidacta",
         "desarrollador Fullstack",
       ],
@@ -110,7 +110,7 @@ function App() {
       <section id="certificados" className="contenedor-certificados">
           <div className="contenedor-izquierda">
             <h2 className="titulo">Certificados de Cursos</h2>
-            <p className="parrafo">Estos son mis certificados que he adquirido en la plataforma UdeMy y el bootcamp Makaia</p>
+            <p className="parrafo">Estos son mis certificados que he adquirido en la plataforma UdeMy y el bootcamp Makaia donde me certifiqué como backend developer</p>
           </div>
           <div className="contenedor-derecha">
             <div className="certificados">
@@ -137,16 +137,16 @@ function App() {
         </div>
         <div className="contenedor-derecha">
           <p className="parrafo">
-            Nací en la ciudad de Medellín departamento de Antioquia Colombia, con
-            un gran deseo y anhelo de iniciarme en esta gran artistica y
-            maravillosa carrera. Disfruto mucho construyendo interfaces para
+            Nací en la ciudad de Medellín departamento de Antioquia Colombia. 
+            Tengo 34 años,
+            disfruto mucho construyendo interfaces para
             usuarios que sean adaptables y escalables para los dispositivos,
-            tambien me gusta generar soluciones a los problemas que se puedan
+            soy agil en generar soluciones a los problemas que se puedan
             presentar. Tambien me gusta trabajar en grupo y analizar y debatir los
             retos y mejores soluciones a cualquier problema o eventualidad que se
             presente.
           </p>
-          <a rel="noreferrer" href="/Hoja de Vida Juan Pablo Quintero.pdf" download="CV Juan Pablo Quintero 2023">
+          <a rel="noreferrer" href="/Hoja de Vida Juan Pablo Quintero.pdf" download="CV Juan Pablo Quintero 2024">
             <button className="boton-cv" type="submit">
               Descarga mi CV
             </button>
@@ -155,7 +155,7 @@ function App() {
       </section>
       <section id="contactame" className="contenedor-contactame">
         <div className="contenedor-izquierda">
-          <h2 className="titulo">Contactame</h2>
+          <h2 className="titulo">Contáctame</h2>
           <p className="efectoMostrarArriba parrafo">
             Puedes contactarme enviándome un correo si quieres emplearme u obtener mis servicios.
           </p>

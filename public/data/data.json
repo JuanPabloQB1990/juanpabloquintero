@@ -160,23 +160,23 @@
     {
       "id": 1,
       "nombre": "Cotizador cripto monedas",
-      "descripcion": "Con esta App podras cotizar la criptomoneda deseada frente a la moneda seleccionada",
-      "github": "https://github.com/JuanPabloQB1990/cotizador-criptomonedas",
+      "descripcion": "Cotiza criptomonedas con la moneda que le indiques",
+      "github": "https://github.com/JuanPabloQB1990/cotizador-criptomonedas.",
       "link": "https://cotizador-criptomonedas-jpb.netlify.app/",
       "image": "img/proyectos/cotizador.PNG"
     },
     {
       "id": 2,
       "nombre": "Control de gastos",
-      "descripcion": "Con esta App podras llevar las cuentas de tus gastos",
+      "descripcion": "Lleva tus cuentas y gastos que realizas.",
       "github": "https://github.com/JuanPabloQB1990/control-gastos",
       "link": "https://control-gastos-juanpablo.netlify.app/",
       "image": "img/proyectos/gastos.PNG"
     },
     {
       "id": 3,
-      "nombre": "Buscador bebidas",
-      "descripcion": "App diseñada para buscar tus bebidas y cocteles favoritos y ver sus recetas",
+      "nombre": "Buscador de bebidas",
+      "descripcion": "Busca tus bebidas y cocteles favoritos y sus recetas.",
       "github": "https://github.com/JuanPabloQB1990/buscador-bebidas",
       "link": "https://buscador-bebidas-juanpabloqb.netlify.app/",
       "image": "img/proyectos/bebidas.PNG"

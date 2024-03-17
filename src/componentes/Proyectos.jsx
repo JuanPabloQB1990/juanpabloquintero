@@ -12,7 +12,7 @@ import './styles.css';
 import { EffectCards } from 'swiper/modules';
 const Proyectos = ({ proyectos }) => {
 
-  console.log(proyectos);
+
   return (
     <Swiper
         effect={'cards'}
@@ -21,7 +21,7 @@ const Proyectos = ({ proyectos }) => {
         className="mySwiper"
       >
         {proyectos.map((proyecto) => (
-          <SwiperSlide>
+          <SwiperSlide key={proyecto.id}>
             <div className="card" >
               <img src={proyecto.image} className="" alt="..."/>
               <div className="card-body">

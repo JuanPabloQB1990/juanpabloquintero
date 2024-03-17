@@ -1,7 +1,7 @@
 .swiper {
   width: 65%;
   max-width: 300px;
-  height: clamp(320px, 400px, 500px);
+  height: clamp(320px, 410px, 500px);
 }
 
 .swiper-slide {
