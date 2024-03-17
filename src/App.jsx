@@ -6,16 +6,14 @@ import Icons from "./componentes/Icons.jsx";
 import Habilidades from "./componentes/Habilidades";
 import Certificados from "./componentes/Certificados";
 import emailjs from "@emailjs/browser";
-import { BiHome } from "react-icons/bi";
-import { RiToolsFill } from "react-icons/ri";
-import { GrCertificate } from "react-icons/gr";
-import { SiAboutdotme } from "react-icons/si";
-import { IoIosContacts } from "react-icons/io";
+import NavBar from "./componentes/NavBar.jsx";
+import Proyectos from "./componentes/Proyectos.jsx";
 
 function App() {
   const [iconos, setIconos] = useState([]);
   const [habilidades, setHabilidades] = useState([]);
   const [certificados, setCertificados] = useState([]);
+  const [proyectos, setProyectos] = useState([]);
 
   const getIconos = async () => {
     const res = await fetch("/data/data.json");
@@ -23,6 +21,7 @@ function App() {
     setIconos(datos.iconos);
     setHabilidades(datos.habilidades);
     setCertificados(datos.certificados);
+    setProyectos(datos.proyectos)
   };
 
   useEffect(() => {
@@ -49,33 +48,6 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    let card = document.querySelector(".efectoIzquierda");
-    let traerFrente = document.querySelector(".traerFrente");
-    let mostrarDerecha = document.querySelector(".mostrarDerecha");
-
-    card.classList.add("mostrarIzquierda");
-    traerFrente.classList.add("mostrarAlFrente");
-    traerFrente.style.opacity = "1";
-    mostrarDerecha.classList.add("mostrarDerecha");
-  }, []);
-
-  function mostrarScroll() {
-    let card = document.querySelectorAll(".efectoMostrarArriba");
-
-    let scrollTop = document.documentElement.scrollTop;
-    for (var i = 0; i < card.length; i++) {
-      let alturaCard = card[i].offsetTop;
-
-      if (alturaCard - 650 < scrollTop) {
-        card[i].style.opacity = 1;
-        card[i].classList.add("mostrarArriba", "template_dc5h5uw");
-      }
-    }
-  }
-
-  window.addEventListener("scroll", mostrarScroll);
-
   const sendEmail = (event) => {
     event.preventDefault();
     emailjs
@@ -91,44 +63,16 @@ function App() {
 
   return (
     <main className="contenedor">
-      <div className="header">
-        <nav className="nav">
-          <a href="#presentacion">
-            <span>
-              <BiHome size="2em" />
-            </span>
-          </a>
-          <a href="#habilidades">
-            <span>
-              <RiToolsFill size="2em" />
-            </span>
-          </a>
-          <a href="#certificados">
-            <span>
-              <GrCertificate fill="currentColor" size="2em" />
-            </span>
-          </a>
-          <a href="#about">
-            <span>
-              <SiAboutdotme size="2em" />
-            </span>
-          </a>
-          <a href="#contactame">
-            <span>
-              <IoIosContacts size="2em" />
-            </span>
-          </a>
-        </nav>
-      </div>
+      <NavBar/>
       <section id="presentacion" className="contenedor-presentacion">
-        <div className="contenedor-titulos">
-          <h1 className="efectoIzquierda titulo">
+        <div className="contenedor-izquierda">
+          <h1 className="titulo">
             Juan Pablo Quintero Bustamante
           </h1>
           <h2 className="sub-titulo">
             Soy <span ref={el}></span>
           </h2>
-          <p className="traerFrente parrafo">
+          <p className="parrafo">
             Apasionado por la programación y el desarrollo Web tanto del lado
             del frontend como del backend.
           </p>
@@ -138,53 +82,70 @@ function App() {
             })}
           </div>
         </div>
-        <div className="contenedor-foto">
-          <div className="mostrarDerecha foto">
+        <div className="contenedor-derecha">
+          <div className="foto">
             <img src={foto} alt="foto" />
           </div>
         </div>
       </section>
       <section id="habilidades" className="contenedor-habilidades">
-        <h2 className="titulo">Habilidades</h2>
-        <p className="parrafo efectoMostrarArriba">
-          Estas son mis habilidades con su porcentaje repectivo de conocimiento
-          y experiencia que he adquirido de forma autodidacta, a la hora de
-          desarrollar contenido Web.
-        </p>
-        <div className="habilidades">
-          {habilidades.map((habilidad) => {
-            return <Habilidades habilidad={habilidad} key={habilidad.id} />;
-          })}
+        <div className="contenedor-izquierda">
+          <h2 className="titulo">Habilidades</h2>
+          <p className="parrafo">
+            Estas son mis habilidades con su porcentaje repectivo de conocimiento
+            y experiencia que he adquirido de forma autodidacta, a la hora de
+            desarrollar contenido Web.
+          </p>
+
+        </div>
+        <div className="contenedor-derecha">
+          <div className="habilidades">
+            {habilidades.map((habilidad) => {
+              return <Habilidades habilidad={habilidad} key={habilidad.id} />;
+            })}
+
+          </div>
         </div>
       </section>
       <section id="certificados" className="contenedor-certificados">
-        <h2 className="titulo">Certificados de Cursos</h2>
-        <article>
-          <ul className="efectoMostrarArriba certificados">
-            {certificados.map((certificado) => {
-              return (
-                <Certificados certificado={certificado} key={certificado.id} />
-              );
-            })}
-          </ul>
-        </article>
+          <div className="contenedor-izquierda">
+            <h2 className="titulo">Certificados de Cursos</h2>
+            <p className="parrafo">Estos son mis certificados que he adquirido en la plataforma UdeMy y el bootcamp Makaia</p>
+          </div>
+          <div className="contenedor-derecha">
+            <div className="certificados">
+                {certificados.map((certificado) => {
+                  return (
+                    <Certificados certificado={certificado} key={certificado.id} />
+                  );
+                })}
+            </div>
+          </div>
+      </section>
+      <section id="proyectos" className="contenedor-proyectos">
+        <div className="contenedor-izquierda">
+          <h2 className="titulo">Proyectos</h2>
+          <p className="parrafo">Estos son algunos de mis mejores proyectos, donde aprendí y fortalecí mis habilidades anteriormente descritas, tanto en el backend como en el frontend</p>
+        </div>
+        <div className="contenedor-derecha">
+              <Proyectos proyectos={proyectos}/>
+        </div>
       </section>
       <section id="about" className="contenedor-acerca_de_mi">
-        <h2 className="titulo">Acerca de Mi</h2>
-        <figure className="foto-acerca_de_mi">
-          <img src={foto} alt="" />
-        </figure>
-        <p className="efectoMostrarArriba parrafo">
-          Nací en la ciudad de Medellín departamento de Antioquia Colombia, con
-          un gran deseo y anhelo de iniciarme en esta gran artistica y
-          maravillosa carrera. Disfruto mucho construyendo interfaces para
-          usuarios que sean adaptables y escalables para los dispositivos,
-          tambien me gusta generar soluciones a los problemas que se puedan
-          presentar. Tambien me gusta trabajar en grupo y analizar y debatir los
-          retos y mejores soluciones a cualquier problema o eventualidad que se
-          presente.
-        </p>
-        <div className="contenedor-boton_cv">
+        <div className="contenedor-izquierda">
+          <h2 className="titulo">Acerca de Mi</h2>
+        </div>
+        <div className="contenedor-derecha">
+          <p className="parrafo">
+            Nací en la ciudad de Medellín departamento de Antioquia Colombia, con
+            un gran deseo y anhelo de iniciarme en esta gran artistica y
+            maravillosa carrera. Disfruto mucho construyendo interfaces para
+            usuarios que sean adaptables y escalables para los dispositivos,
+            tambien me gusta generar soluciones a los problemas que se puedan
+            presentar. Tambien me gusta trabajar en grupo y analizar y debatir los
+            retos y mejores soluciones a cualquier problema o eventualidad que se
+            presente.
+          </p>
           <a rel="noreferrer" href="/Hoja de Vida Juan Pablo Quintero.pdf" download="CV Juan Pablo Quintero 2023">
             <button className="boton-cv" type="submit">
               Descarga mi CV
@@ -193,39 +154,24 @@ function App() {
         </div>
       </section>
       <section id="contactame" className="contenedor-contactame">
-        <div className="contenedor-info">
+        <div className="contenedor-izquierda">
           <h2 className="titulo">Contactame</h2>
-          <h2 className="sub-titulo">Enviame un correo</h2>
           <p className="efectoMostrarArriba parrafo">
             Puedes contactarme enviándome un correo si quieres emplearme u obtener mis servicios.
           </p>
-          <h2 className="sub-titulo">
-            <b>Teléfono:</b>
-            <small> (+57) 324 312 80 49</small>
-          </h2>
-          <div className="icons">
-            {iconos.map((icono) => {
-              return <Icons icono={icono} key={icono.id} />;
-            })}
-          </div>
         </div>
-        <div className="contenedor-formulario">
+        <div className="contenedor-derecha">
           <form className="formulario-contacto" onSubmit={sendEmail}>
-            <div className="row">
-              <div className="form-input col-12 col-sm-6">
-                <label htmlFor="nombre">Nombres</label>
-                <input id="nombre" type="text" name="nombre" />
-              </div>
-              <div className="form-input col-12 col-sm-6">
-                <label htmlFor="correo">Email</label>
-                <input type="email" id="correo" name="email" />
-              </div>
+            <div className="form-input">
+              <input id="nombre" type="text" name="nombre" placeholder="nombres"/>
             </div>
-            <div className="form-input ">
-              <label htmlFor="mensaje">Mensaje</label>
-              <textarea rows="5" id="mensaje" name="mensaje"></textarea>
+            <div className="form-input">
+              <input type="email" id="correo" name="email" placeholder="email"/>
             </div>
-            <div className="">
+            <div className="form-input">
+              <textarea rows="5" id="mensaje" name="mensaje" placeholder="mensaje"></textarea>
+            </div>
+            <div className="form-input">
               <button>Enviar</button>
             </div>
           </form>

@@ -2,9 +2,9 @@ import BarraHabilidades from "./BarraHabilidades";
 
 const Habilidades = ({habilidad}) => {
   return (
-    <div className="efectoMostrarArriba habilidad">
+    <div className="habilidad">
       <img src={habilidad.url} alt={habilidad.nombre} />
-      <p className="efectoMostrarArriba parrafo">{habilidad.nombre}</p>
+      <p className="parrafo">{habilidad.nombre}</p>
       <div>
         <BarraHabilidades width={habilidad.habilidad} />
       </div>

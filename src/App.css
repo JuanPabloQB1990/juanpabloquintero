@@ -1,4 +1,6 @@
 :root {
+  --bg-button: #00ff95;
+  --color-button: white;
   --bg-body: #08152a;
   --font-size-titulos: clamp(1.7rem, calc(1.25rem + 2.25vw), 3.95rem);
   --font-size-subTitulos: clamp(1.35rem, calc(1.17rem + 0.88vw), 2.22rem);
@@ -9,11 +11,14 @@
   --color1-border-foto: #00ff95;
   --color2-border-foto: rgba(45, 241, 227, 1);
   --color3-border-foto: #f2317f;
+  --font-size-titulosCard: clamp(10px, calc(1rem + 1.25vw), 2rem);
+  --font-size-parrafosCard: clamp(5px, calc(1rem + 0.47vw), 1rem);
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -33,20 +38,21 @@ body {
 .contenedor-presentacion,
 .contenedor-habilidades,
 .contenedor-certificados,
+.contenedor-proyectos,
 .contenedor-acerca_de_mi,
 .contenedor-contactame {
-  height: 100vh;
-}
-
-.contenedor-titulos,
-.contenedor-foto,
-.contenedor-info,
-.contenedor-formulario {
-  height: 50%;
+  min-height: 100vh;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
+}
+
+.contenedor-izquierda,
+.contenedor-derecha {
+  width: 100%;
 }
 
 .titulo {
@@ -68,8 +74,8 @@ body {
   color: var(--color-parrafos);
   font-family: fuente parrafos;
   font-size: var(--font-size-parrafos);
-  padding: 5px 25px;
-  opacity: 0;
+  padding: 5px 15px;
+  text-align: center;
 }
 
 .icons {
@@ -103,6 +109,7 @@ body {
   border: 10px solid transparent;
   width: max(160px, 25vw);
   height: max(160px, 25vw);
+  margin: auto;
 }
 
 .foto img {
@@ -111,32 +118,83 @@ body {
   object-fit: cover;
 }
 
-.habilidades {
+.habilidades,
+.certificados {
   display: flex;
   overflow-x: scroll;
-  max-width: 85vw;
-  height: 50vh;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   gap: 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border: #00ff95 solid 2px;
+}
+
+.card img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.card-title {
+  color: #08152a;
+  font-size: var(--font-size-titulosCard);
+  padding: 10px;
+}
+
+.card-text {
+  font-size: var(--font-size-parrafosCard);
+  padding: 10px 10px;
+  color: black;
+}
+
+
+.card-link {
+  padding: 10px 10px;
+  color: black;
+}
+
+.card-body-links {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  height: auto;
+  align-items: center;
+  margin: 0 10px;
+  border-top: black solid 2px;
 }
 
 .habilidad {
   width: 280px;
   height: 280px;
   text-align: center;
-  opacity: 0;
 }
 
 .habilidad img {
   height: 150px;
   width: 150px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.habilidad:hover img {
-  transform: perspective(10rem) translateZ(3rem);
-  transition: transform 1s;
+.certificados {
+  height: 55vw;
+}
+
+.certificado > img {
+  box-sizing: content-box;
+  border: 3vw outset gold;
+  width: clamp(160px, 45vw, 1000px);
+  height: 38vw;
+  cursor: pointer;
 }
 
 .contenedor-medalla {
@@ -159,35 +217,21 @@ body {
   animation: caida 2.5s;
 }
 
-@media (max-width: 992px) {
-
-  .contenedor-certificados{
-    height: auto;
-    padding-bottom: 2rem;
-  }
-
-  .certificados {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  .certificado > img {
-    box-sizing: content-box;
-    border: 3vw outset gold;
-    width: clamp(160px, 45vw, 1000px);
-    height: 35vw;
-    cursor: pointer;
-  }
-
-  .contenedor-acerca_de_mi {
-    padding-top: 2rem;
-  }
+.contenedor-derecha > a {
+  display: block;
+  text-align: center;
 }
 
-
+.boton-cv,
+.form-input button {
+  background-color: var(--bg-button);
+  color: var(--color-button);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: auto;
+  cursor: pointer;
+}
 
 @keyframes caida {
   from {
@@ -213,115 +257,13 @@ body {
   }
 }
 
-.foto-acerca_de_mi img {
-  border-radius: 50%;
-  width: 25vw;
-  height: 25vw;
-  object-fit: cover;
-  float: left;
-  margin: 1.5rem 2rem 2rem 2rem;
-  shape-outside: circle();
-}
-
-.boton-cv {
-  position: relative;
-  padding: 0.2rem;
-  width: 15rem;
-  height: 2.5rem;
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0.25rem 0.25rem 0.5rem 0.25rem rgba(0, 0, 0, 0.15);
-  background: rgb(72, 240, 237);
-  background: linear-gradient(
-    90deg,
-    #00ff95 0%,
-    rgba(45, 241, 227, 1) 38%,
-    #f2317f 79%
-  );
-  background-size: 300% 100%;
-  transition: background-position 0.5s ease-in-out;
-}
-
-.boton-cv::after {
-  content: "";
-  position: absolute;
-  color: black;
-  bottom: 0;
-  width: 0;
-  height: 0.25rem;
-  transition: width 0.5s ease, left 0.5s ease, right 0.5s ease;
-}
-
-.boton-cv:hover {
-  background-position: 100% 0;
-}
-
-.contenedor-formulario label {
-  color: var(--color-parrafos);
-  font-weight: 500;
-}
-
-.formulario-contacto {
-  width: 90%;
-  margin: 2rem auto;
-}
-
-.form-input {
-  padding-bottom: 10px;
-}
-
-.formulario-contacto input {
-  height: 35px;
-}
-
-.formulario-contacto input,
-textarea {
-  background-color: transparent;
-  margin: 0 auto;
-  width: 100%;
-  padding: 2px 10px;
-  outline: none;
-  color: var(--color-parrafos);
-}
-
-.formulario-contacto button {
-  border: none;
-  color: black;
-  width: 100%;
-  padding: 10px;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  font-weight: bold;
-  background: rgb(72, 240, 237);
-  background: linear-gradient(
-    90deg,
-    #00ff95 0%,
-    rgba(45, 241, 227, 1) 38%,
-    #f2317f 79%
-  );
-  background-size: 300% 100%;
-  transition: background-position 0.5s ease-in-out;
-}
-
-.formulario-contacto button:hover {
-  background-position: 100% 0;
-}
-
-.formulario-contacto input:focus,
-textarea:focus {
-  box-shadow: 0px 0px 10px #85f5f6;
-}
-
 .header {
   background-color: transparent;
   width: 100%;
   height: 60px;
   position: fixed;
   bottom: 15px;
+  z-index: 999;
 }
 
 .nav {
@@ -349,110 +291,60 @@ textarea:focus {
   text-decoration: none;
 }
 
-.mostrarIzquierda {
-  animation: mostrarIzquierda 1s;
+.formulario-contacto {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-.mostrarArriba {
-  animation: mostrarArriba 1s;
+.form-input {
+  width: 80%;
 }
 
-.mostrarAlFrente {
-  animation: mostrarAlFrente 2s;
-}
-.mostrarDerecha {
-  animation: mostrarDerecha 2s;
-}
-
-@keyframes mostrarDerecha {
-  0% {
-    transform: translateX(300px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes mostrarIzquierda {
-  0% {
-    transform: translateX(-200px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes mostrarArriba {
-  0% {
-    transform: translateY(-200px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes mostrarAlFrente {
-  0% {
-    transform: perspective(10rem) translateZ(-105rem);
-  }
-
-  100% {
-    transform: perspective(10rem) translateZ(0rem);
-  }
+.form-input * {
+  width: 100%;
+  padding: 4px 8px;
+  font-style: italic;
+  font-weight: 500;
 }
 
 @media (min-width: 992px) {
   .contenedor-presentacion,
+  .contenedor-habilidades,
+  .contenedor-certificados,
+  .contenedor-proyectos,
+  .contenedor-acerca_de_mi,
   .contenedor-contactame {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
   }
 
-  .contenedor-titulos,
-  .contenedor-info,
-  .contenedor-formulario {
-    width: 50vw;
-    height: 50vh;
+  .contenedor-izquierda,
+  .contenedor-derecha {
+    width: 50%;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-  }
-
-  .contenedor-foto {
-    margin: 0 auto;
-  }
-
-  .titulo,
-  .sub-titulo,
-  .icons {
-    text-align: left;
-    padding-left: 1.5rem;
+    align-items: center;
   }
 
   .certificados {
     display: flex;
     overflow-x: scroll;
-    list-style: none;
     width: clamp(280px, 70vw, 1000px);
-    height: 35vw;
+    height: 32vw;
     margin-left: auto;
     margin-right: auto;
     gap: 15px;
-    opacity: 0;
   }
-  
+
   .certificado > img {
     box-sizing: content-box;
-    border: 3vw outset gold;
     width: clamp(160px, 30vw, 1000px);
     height: 20vw;
-    cursor: pointer;
   }
-  
-  
 }
+

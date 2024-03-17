@@ -1,0 +1,17 @@
+.swiper {
+  width: 65%;
+  max-width: 300px;
+  height: clamp(320px, 400px, 500px);
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide {
+  background-color: rgb(13, 203, 209);
+}

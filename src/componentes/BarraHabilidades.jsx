@@ -8,6 +8,7 @@ const BarraHabilidades = ({width}) => {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     box-shadow: 20px 25px 45px rgba(0, 0, 0, 0.4);
+    padding: .5px;
   `;
 
   const anime = keyframes`
@@ -18,12 +19,13 @@ const BarraHabilidades = ({width}) => {
   const Progreso = styled.div`
     width: ${width}%;
     height: 100%;
-    background-color: red;
+    background-color: #00ff95;
     border-radius: 10px;
-    animation: ${anime} 15s ease;
+    animation: ${anime} 10s ease;
     text-align: center;
     font-weight: 700;
     color: white;
+    line-height: normal;
   `;
 
   return (
