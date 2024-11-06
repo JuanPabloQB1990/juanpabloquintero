@@ -4,7 +4,7 @@
   --bg-body: #08152a;
   --font-size-titulos: clamp(1.7rem, calc(1.25rem + 2.25vw), 3.95rem);
   --font-size-subTitulos: clamp(1.35rem, calc(1.17rem + 0.88vw), 2.22rem);
-  --font-size-parrafos: clamp(1rem, calc(1rem + 0.47vw), 1rem);
+  --font-size-parrafos: clamp(1.5rem, calc(1.5rem + 0.47vw), 1.5rem);
   --color-titulos: #85f5f6;
   --color-subTitulos: aliceblue;
   --color-parrafos: aliceblue;
@@ -21,6 +21,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -58,6 +63,8 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-y: hidden;
+  scroll-snap-align: end;
   gap: 2rem;
 }
 
@@ -129,10 +136,14 @@ body::-webkit-scrollbar-thumb {
 .certificados {
   display: flex;
   overflow-x: scroll;
-  max-width: 500px;
+  max-width: 90%;
   margin-left: auto;
   margin-right: auto;
-  gap: 32px;
+  gap: 25px;
+}
+
+.certificados {
+  height: 55vw;
 }
 
 .certificados::-webkit-scrollbar, .habilidades::-webkit-scrollbar {
@@ -200,18 +211,14 @@ body::-webkit-scrollbar-thumb {
 
 .habilidad {
   width: 280px;
-  height: 280px;
+  height: 320px;
   text-align: center;
 }
 
 .habilidad img {
   height: 150px;
   width: 150px;
-  object-fit: cover;
-}
-
-.certificados {
-  height: 55vw;
+  object-fit: fill;
 }
 
 .certificado > img {
@@ -355,16 +362,18 @@ body::-webkit-scrollbar-thumb {
   .contenedor-izquierda,
   .contenedor-derecha {
     width: 50%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
   }
 
   .certificados {
     display: flex;
     overflow-x: scroll;
-    width: clamp(280px, 70vw, 1000px);
+    width: clamp(280px, 90%, 1000px);
     height: 32vw;
     margin-left: auto;
     margin-right: auto;
@@ -375,6 +384,10 @@ body::-webkit-scrollbar-thumb {
     box-sizing: content-box;
     width: clamp(160px, 30vw, 1000px);
     height: 20vw;
+  }
+
+  .habilidades {
+    height: 50vh;
   }
 
 }

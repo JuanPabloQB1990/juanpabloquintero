@@ -5,15 +5,28 @@ import foto from "/img/Foto.jpg";
 import Icons from "./componentes/Icons.jsx";
 import Habilidades from "./componentes/Habilidades";
 import Certificados from "./componentes/Certificados";
-import emailjs from "@emailjs/browser";
 import NavBar from "./componentes/NavBar.jsx";
 import Proyectos from "./componentes/Proyectos.jsx";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { envioCorreos } from "./services/envioEmails.js";
 
 function App() {
   const [iconos, setIconos] = useState([]);
   const [habilidades, setHabilidades] = useState([]);
   const [certificados, setCertificados] = useState([]);
   const [proyectos, setProyectos] = useState([]);
+  const [envioEmailForm, setEnvioEmailForm] = useState({
+    nombre: "",
+    email: "",
+    asunto: "",
+    mensaje: "",
+  });
+
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [asunto, setAsunto] = useState("");
+  const [mensaje, setMensaje] = useState("");
 
   const getIconos = async () => {
     const res = await fetch("/data/data.json");
@@ -48,23 +61,47 @@ function App() {
     };
   }, []);
 
-  const sendEmail = (event) => {
+  const sendEmail = async(event) => {
     event.preventDefault();
-    emailjs
-      .sendForm(
-        "service_jwl08nk",
-        "template_dc5h5uw",
-        event.target,
-        "bVN74xK_3s0m-s6VJ"
-      )
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
-  };
 
+    const body = {
+      nombre,
+      email,
+      asunto,
+      mensaje,
+    }
+    
+    const data = await envioCorreos(body)
+    
+    if (data.msg === "ok") {
+      toast.success("Correo enviado!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      })
+      
+      setEmail("")
+      setNombre("")
+      setAsunto("")
+      setMensaje("")
+      
+      
+    }
+    
+  };
+  
   return (
     <main className="contenedor">
+      <ToastContainer/>
       <NavBar/>
       <section id="presentacion" className="contenedor-presentacion">
+      
         <div className="contenedor-izquierda">
           <h1 className="titulo">
             Juan Pablo Quintero Bustamante
@@ -93,8 +130,7 @@ function App() {
           <h2 className="titulo">Habilidades</h2>
           <p className="parrafo">
             Estas son mis habilidades con su porcentaje repectivo de conocimiento
-            y experiencia que he adquirido de forma autodidacta, a la hora de
-            desarrollar contenido Web.
+            y experiencia.
           </p>
 
         </div>
@@ -110,7 +146,7 @@ function App() {
       <section id="certificados" className="contenedor-certificados">
           <div className="contenedor-izquierda">
             <h2 className="titulo">Certificados de Cursos</h2>
-            <p className="parrafo">Estos son mis certificados que he adquirido en la plataforma UdeMy y el bootcamp Makaia donde me certifiqué como backend developer</p>
+            <p className="parrafo">Estos son mis certificados que he adquirido en plataformas Online y el bootcamp Makaia donde me certifiqué como backend developer</p>
           </div>
           <div className="contenedor-derecha">
             <div className="certificados">
@@ -161,18 +197,21 @@ function App() {
           </p>
         </div>
         <div className="contenedor-derecha">
-          <form className="formulario-contacto" onSubmit={sendEmail}>
+          <form className="formulario-contacto" >
             <div className="form-input">
-              <input id="nombre" type="text" name="nombre" placeholder="nombres"/>
+              <input id="nombre" type="text" name="nombre" onChange={(e) => setNombre(e.target.value)} value={nombre} placeholder="nombres"/>
             </div>
             <div className="form-input">
-              <input type="email" id="correo" name="email" placeholder="email"/>
+              <input type="email" id="correo" name="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder="email"/>
             </div>
             <div className="form-input">
-              <textarea rows="5" id="mensaje" name="mensaje" placeholder="mensaje"></textarea>
+              <input id="asunto" type="text" name="asunto" onChange={(e) => setAsunto(e.target.value)} value={asunto} placeholder="asunto"/>
             </div>
             <div className="form-input">
-              <button>Enviar</button>
+              <textarea rows="5" id="mensaje" name="mensaje" onChange={(e) => setMensaje(e.target.value)} value={mensaje} placeholder="mensaje"></textarea>
+            </div>
+            <div className="form-input">
+              <button onClick={sendEmail}>Enviar</button>
             </div>
           </form>
         </div>

@@ -118,9 +118,33 @@
       "habilidad": 70
     },
     {
-      "id": 15,
+      "id": 16,
       "nombre": "firebase",
       "url": "logos/firebase.png",
+      "habilidad": 83
+    },
+    {
+      "id": 17,
+      "nombre": "typescript",
+      "url": "logos/typescript.png",
+      "habilidad": 70
+    },
+    {
+      "id": 18,
+      "nombre": "postgres",
+      "url": "logos/postgres.png",
+      "habilidad": 75
+    },
+    {
+      "id": 19,
+      "nombre": "docker",
+      "url": "logos/docker.png",
+      "habilidad": 83
+    },
+    {
+      "id": 20,
+      "nombre": "kubernetes",
+      "url": "logos/kubernetes.png",
       "habilidad": 83
     }
   ],
@@ -129,38 +153,44 @@
       "id": 1,
       "nombre": "html",
       "urlImagen": "Certificados/curso html.JPG",
-      "urlDescarga": "./public/Certificados//Certificado HTML.pdf"
+      "urlDescarga": "./public/Certificados/Certificado HTML.pdf"
     },
     {
       "id": 2,
       "nombre": "css",
       "urlImagen": "Certificados/curso css.JPG",
-      "urlDescarga": "./public/Certificados//Certificado CSS.pdf"
+      "urlDescarga": "./public/Certificados/Certificado CSS.pdf"
     },
     {
       "id": 3,
       "nombre": "javascript",
       "urlImagen": "Certificados/curso javascript.JPG",
-      "urlDescarga": "./public/Certificados//Certificado JavaScript.pdf"
+      "urlDescarga": "./public/Certificados/Certificado JavaScript.pdf"
     },
     {
       "id": 4,
       "nombre": "react",
       "urlImagen": "Certificados/curso react.PNG",
-      "urlDescarga": "./public/Certificados//Certificado React.pdf"
+      "urlDescarga": "./public/Certificados/Certificado React.pdf"
     },
     {
       "id": 5,
       "nombre": "backend",
       "urlImagen": "Certificados/bootcamp makaia.png",
-      "urlDescarga": "./public/Certificados//bootcamp makaia.PNG"
+      "urlDescarga": "./public/Certificados/bootcamp makaia.PNG"
+    },
+    {
+      "id": 6,
+      "nombre": "database design",
+      "urlImagen": "Certificados/database design.JPG",
+      "urlDescarga": "./public/Certificados/database design.JPG"
     }
   ],
   "proyectos": [
     {
       "id": 1,
       "nombre": "Cotizador cripto monedas",
-      "descripcion": "Cotiza criptomonedas con la moneda que le indiques",
+      "descripcion": "Cotiza criptomonedas con la moneda que tu le indiques",
       "github": "https://github.com/JuanPabloQB1990/cotizador-criptomonedas.",
       "link": "https://cotizador-criptomonedas-jpb.netlify.app/",
       "image": "img/proyectos/cotizador.PNG"
@@ -180,6 +210,14 @@
       "github": "https://github.com/JuanPabloQB1990/buscador-bebidas",
       "link": "https://buscador-bebidas-juanpabloqb.netlify.app/",
       "image": "img/proyectos/bebidas.PNG"
+    },
+    {
+      "id": 4,
+      "nombre": "Administrador de Productos",
+      "descripcion": "Agrega productos con sus precios, la app puede demorarse debido al hosting gratuito.",
+      "github": "https://github.com/JuanPabloQB1990/admin-productos-backend",
+      "link": "https://admin-products-frontend.vercel.app",
+      "image": "img/proyectos/adminprod.JPG"
     }
   ]
 }
