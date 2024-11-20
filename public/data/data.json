@@ -206,7 +206,7 @@
     {
       "id": 3,
       "nombre": "Buscador de bebidas",
-      "descripcion": "Busca tus bebidas y cocteles favoritos y sus recetas.",
+      "descripcion": "Busca tus bebidas y cocteles favoritos con sus recetas.",
       "github": "https://github.com/JuanPabloQB1990/buscador-bebidas",
       "link": "https://buscador-bebidas-juanpabloqb.netlify.app/",
       "image": "img/proyectos/bebidas.PNG"
@@ -214,7 +214,7 @@
     {
       "id": 4,
       "nombre": "Administrador de Productos",
-      "descripcion": "Agrega productos con sus precios, la app puede demorarse debido al hosting gratuito.",
+      "descripcion": "Administra tus productos.",
       "github": "https://github.com/JuanPabloQB1990/admin-productos-backend",
       "link": "https://admin-products-frontend.vercel.app",
       "image": "img/proyectos/adminprod.JPG"

@@ -2,9 +2,10 @@
   --bg-boton: #00ff95;
   --color-boton: black;
   --bg-body: #08152a;
+  --font-size-button: 1.5rem;
   --font-size-titulos: clamp(1.7rem, calc(1.25rem + 2.25vw), 3.95rem);
   --font-size-subTitulos: clamp(1.35rem, calc(1.17rem + 0.88vw), 2.22rem);
-  --font-size-parrafos: clamp(1.5rem, calc(1.5rem + 0.47vw), 1.5rem);
+  --font-size-parrafos: clamp(1.1rem, calc(1.1rem + 0.65vw), 1.1rem);
   --color-titulos: #85f5f6;
   --color-subTitulos: aliceblue;
   --color-parrafos: aliceblue;
@@ -192,7 +193,6 @@ body::-webkit-scrollbar-thumb {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
 .card-link {
   padding: 10px 10px;
   color: black;
@@ -258,13 +258,19 @@ body::-webkit-scrollbar-thumb {
 .form-input button {
   background-color: var(--bg-boton);
   color: var(--color-boton);
+  height: 60px;
   border: none;
   padding: 10px 20px;
-  font-size: 16px;
-  margin: auto;
+  font-size: var(--font-size-button);
+  margin: 1rem auto;
   cursor: pointer;
   transition: all .2s;
   font-weight: bold;
+}
+
+.form-input input::placeholder, .form-input textarea::placeholder{
+  font-size: 1rem;
+  padding: 5px;
 }
 
 .boton-cv:hover,
@@ -338,12 +344,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .form-input {
-  width: 80%;
+  width: 90%;
 }
 
 .form-input * {
   width: 100%;
-  padding: 4px 8px;
+  padding: 6px 12px;
   font-style: italic;
   font-weight: 500;
 }
@@ -391,4 +397,6 @@ body::-webkit-scrollbar-thumb {
   }
 
 }
+
+
 

@@ -10,18 +10,14 @@ import Proyectos from "./componentes/Proyectos.jsx";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { envioCorreos } from "./services/envioEmails.js";
+import BotonContactame from "./componentes/BotonContactame.jsx";
 
 function App() {
   const [iconos, setIconos] = useState([]);
   const [habilidades, setHabilidades] = useState([]);
   const [certificados, setCertificados] = useState([]);
   const [proyectos, setProyectos] = useState([]);
-  const [envioEmailForm, setEnvioEmailForm] = useState({
-    nombre: "",
-    email: "",
-    asunto: "",
-    mensaje: "",
-  });
+  const [cargando, setCargando] = useState(false);
 
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
@@ -63,7 +59,7 @@ function App() {
 
   const sendEmail = async(event) => {
     event.preventDefault();
-
+    setCargando(true)
     const body = {
       nombre,
       email,
@@ -90,8 +86,7 @@ function App() {
       setNombre("")
       setAsunto("")
       setMensaje("")
-      
-      
+      setCargando(false)
     }
     
   };
@@ -161,7 +156,7 @@ function App() {
       <section id="proyectos" className="contenedor-proyectos">
         <div className="contenedor-izquierda">
           <h2 className="titulo">Proyectos</h2>
-          <p className="parrafo">Estos son algunos de mis mejores proyectos, donde aprendí y fortalecí mis habilidades anteriormente descritas, tanto en el backend como en el frontend</p>
+          <p className="parrafo">Estos son algunos de mis mejores proyectos, donde puse en practica mis habilidades tanto en el backend como en el frontend</p>
         </div>
         <div className="contenedor-derecha">
               <Proyectos proyectos={proyectos}/>
@@ -175,10 +170,9 @@ function App() {
           <p className="parrafo">
             Nací en la ciudad de Medellín departamento de Antioquia Colombia. 
             Tengo 34 años,
-            disfruto mucho construyendo interfaces para
-            usuarios que sean adaptables y escalables para los dispositivos,
-            soy agil en generar soluciones a los problemas que se puedan
-            presentar. Tambien me gusta trabajar en grupo y analizar y debatir los
+            me apasiona crear interfaces para
+            usuarios que sean adaptables y escalables para los dispositivos.
+            Soy agil en generar soluciones. Tambien me gusta trabajar en grupo y analizar y debatir los
             retos y mejores soluciones a cualquier problema o eventualidad que se
             presente.
           </p>
@@ -211,7 +205,7 @@ function App() {
               <textarea rows="5" id="mensaje" name="mensaje" onChange={(e) => setMensaje(e.target.value)} value={mensaje} placeholder="mensaje"></textarea>
             </div>
             <div className="form-input">
-              <button onClick={sendEmail}>Enviar</button>
+              <button onClick={sendEmail}>{cargando ? <BotonContactame/> : "Enviar" }</button>
             </div>
           </form>
         </div>
