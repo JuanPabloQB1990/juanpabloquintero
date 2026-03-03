@@ -180,6 +180,24 @@
   "proyectos": [
     {
       "id": 1,
+      "nombre": "Administrador de tareas",
+      "descripcion": "Crea y Administra tus proyectos, agrega colaboradores y asigna tareas.",
+      "herramientas": ["Node.js", "Express", "MongoDB", "Mongoose","Socket.IO", "Axios", "Typescript","React", "React Router Dom", "Tailwind.css"],
+      "github": "https://github.com/JuanPabloQB1990/uptask_backend",
+      "link": "https://uptask-project.netlify.app",
+      "image": "img/proyectos/uptask.JPG"
+    },
+    {
+      "id": 2,
+      "nombre": "Administrador de Productos",
+      "descripcion": "Administra tus productos.",
+      "herramientas": ["Node.js", "Express", "PosgrestSQL", "Swagger", "ORM Sequelize", "Typescript", "Supertest" , "Jest","React", "React Router Dom", "Tailwind.css"],
+      "github": "https://github.com/JuanPabloQB1990/admin-productos-backend",
+      "link": "https://admin-products-frontend-orcin.vercel.app",
+      "image": "img/proyectos/adminprod.JPG"
+    },
+    {
+      "id": 3,
       "nombre": "Cotizador cripto monedas",
       "descripcion": "Cotiza criptomonedas con la moneda que tu le indiques",
       "herramientas": ["Styled-Components"],
@@ -188,7 +206,7 @@
       "image": "img/proyectos/cotizador.PNG"
     },
     {
-      "id": 2,
+      "id": 4,
       "nombre": "Control de gastos",
       "descripcion": "Lleva tus cuentas y gastos que realizas.",
       "herramientas": ["React.js", "react-circular-progressbar", "react-swipeable-list", "LocalStorage"],
@@ -197,22 +215,13 @@
       "image": "img/proyectos/gastos.PNG"
     },
     {
-      "id": 3,
+      "id": 5,
       "nombre": "Buscador de bebidas",
       "descripcion": "Busca tus bebidas y cocteles favoritos con sus recetas.",
       "herramientas": ["React.js", " React-Bootstrap"],
       "github": "https://github.com/JuanPabloQB1990/buscador-bebidas",
       "link": "https://buscador-bebidas-juanpabloqb.netlify.app/",
       "image": "img/proyectos/bebidas.PNG"
-    },
-    {
-      "id": 4,
-      "nombre": "Administrador de Productos",
-      "descripcion": "Administra tus productos.",
-      "herramientas": ["Node.js", "Express", "PosgrestSQL", "Swagger", "ORM Sequelize", "Typescript", "Supertest" , "Jest","React", "React Router Dom", "Tailwind.css"],
-      "github": "https://github.com/JuanPabloQB1990/admin-productos-backend",
-      "link": "https://admin-products-frontend.vercel.app",
-      "image": "img/proyectos/adminprod.JPG"
     }
   ]
 }
